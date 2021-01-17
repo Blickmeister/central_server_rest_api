@@ -1,0 +1,5 @@
+name:is_user_management_for_android_client
+version:1.0
+main_class:MainClass
+desc:Knihovna slouží k částečnému a dočasnému zastoupení serveru při špatném či žádném připojení k síti.
+Obsahuje funkce týkající se především správy uživatelů v souvislosti s funkcemi IS.
