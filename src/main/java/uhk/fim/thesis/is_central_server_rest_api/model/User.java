@@ -1,12 +1,18 @@
 package uhk.fim.thesis.is_central_server_rest_api.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * @author Bc. Ondřej Schneider - FIM UHK
+ * @version 1.0
+ * @since 2021-04-02
+ * Modelová třída či Entita (pro persistentní uložení v rámci Data JPA) pro informace o hybridních klientech
+ * (pro potřeby IS i řídící a komunukační funkce)
+ */
 @Entity
 @Table(name = "user")
 public class User {
@@ -20,7 +26,7 @@ public class User {
     @Column(name = "user_longitude")
     private double longitude;
 
-    @Column(name = "user_is_online")
+    @Column(name = "user_is_online", columnDefinition = "BOOLEAN", nullable = false)
     private boolean isOnline;
 
     @Column(name = "user_actual_state")
@@ -31,12 +37,12 @@ public class User {
 
     @Column(name = "user_first_conn_to_server")
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm")
     private Date firstConnectionToServer;
 
     @Column(name = "user_last_conn_to_server")
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm")
     private Date lastConnectionToServer;
 
 
@@ -71,7 +77,7 @@ public class User {
         return longitude;
     }
 
-    public boolean isOnline() {
+    public boolean getIsOnline() {
         return isOnline;
     }
 
@@ -107,7 +113,7 @@ public class User {
         this.longitude = longitude;
     }
 
-    public void setOnline(boolean online) {
+    public void setIsOnline(boolean online) {
         isOnline = online;
     }
 

@@ -4,6 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
+/**
+ * @author Bc. Ondřej Schneider - FIM UHK
+ * @version 1.0
+ * @since 2021-04-02
+ * Modelová třída či Entita (pro persistentní uložení v rámci Data JPA) pro informace ze senzorů klientů
+ * (čistě pro potřeby IS)
+ */
 @Entity
 @Table(name = "sensor_information")
 public class SensorInformation {
